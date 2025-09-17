@@ -1,38 +1,361 @@
-// Simple slideshow logic
-const slides = document.querySelectorAll('.slideshow .slide');
-let current = 0;
-
-function showNextSlide() {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
+/* === DESIGN ONLY VERSION styles remain untouched === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// Change every 5 seconds
-setInterval(showNextSlide, 5000);
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main, .featured-items, .banner {
+    flex: 0 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+/* Pre-header */
+.pre-header {
+    background-color: #3a8bcd;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+/* === Header & Slideshow === */
+.header {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    min-height: 150px;
+    overflow: hidden;
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slideshow .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow .slide.active {
+    opacity: 1;
+}
+
+.header-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    height: 40px;
+}
+
+/* === Banner === */
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 40vh;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* === Navigation === */
+.banner .main-nav {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.banner .nav-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.banner .nav-item a {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0.2em 0.5em;    /* 0.5em 1em */
+    border-radius: 6px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.banner .nav-item a:hover {
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #d1d1d1;
+}
 
 
 
 
 
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
-    items: 3,
-    margin: 30,
-    loop: true,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      1024: {
-        items: 3
-      }
-    }
-  });
-});
+
+
+
+
+
+
+
+
+
+
+
+/* === Featured Section === */
+.featured-items {
+  padding: 30px 15px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-items h1 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #3a8bcd;
+  text-decoration: underline;
+}
+
+/* === Product Grid === */
+.featured-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* === Product Card === */
+.product-box {
+  flex: 1 1 calc(25% - 20px); /* 4 per row on desktop */
+  max-width: 220px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: #fff;
+  transition: transform 0.2s;
+}
+
+.product-box:hover {
+  transform: translateY(-5px);
+}
+
+.featured-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* === Responsive Breakpoints === */
+
+/* Tablet: 2 per row */
+@media (max-width: 991px) and (min-width: 601px) {
+  .product-box {
+    flex: 1 1 calc(45% - 20px);
+    max-width: 220px;
+  }
+}
+
+/* Small mobile: 1 per row */
+@media (max-width: 600px) {
+  .product-box {
+    flex: 1 1 100%;
+    max-width: 300px;
+  }
+}
+
+
+
+
+/* === Swiper Modal === */
+.swiper-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  height: 80%;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.swiper-close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  background: #f44336;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1010;
+}
+.swiper-close-button:hover {
+  background: #d32f2f;
+}
+
+.swiper-container {
+  flex: 1;
+  width: 100%;
+}
+.swiper-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: grey;
+  opacity: 0.6;
+  border-radius: 50%;
+}
+.swiper-pagination-bullet-active {
+  background: #3a8bcd;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+/* === Footer === */
+.footer {
+    background-color: #3a8bcd;
+    color: #fff;
+    text-align: center;
+    outline: 2px solid white;
+    outline-offset: -10px;
+    border-radius: 12px;
+    padding-top: 20px;
+    margin-top: -70px;
+}
+
+.footer .footer-menu ul {
+    padding: 0;
+    margin: 0 0 20px 0;
+    list-style: none;
+}
+
+.footer .footer-menu ul li a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer .footer-menu ul li a:hover {
+    color: #dceeff;
+}
+
+.footer .footer-contact p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer .footer-cta {
+    margin: 20px 0;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25d366;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe5d;
+}
+
+.footer .footer-disclaimer {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.9;
+}
