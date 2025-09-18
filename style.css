@@ -198,6 +198,19 @@ main, .featured-items, .banner {
   border-radius: 4px;
 }
 
+/* Colour for Product Title and Price */
+.featured-item h4,
+.featured-item p:first-of-type {
+  color: #3a8bcd; /* themed blue */
+  font-weight: 600;
+}
+
+
+
+
+
+
+
 /* === Responsive Breakpoints === */
 
 /* Tablet: 2 per row */
