@@ -155,6 +155,7 @@ main, .featured-items, .banner {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 100px; /* space above footer */
 }
 
 .featured-items h1 {
