@@ -373,3 +373,11 @@ main, .featured-items, .banner {
     font-size: 12px;
     opacity: 0.9;
 }
+
+
+
+/* Smooth scroll for anchor links  */
+html {
+  scroll-behavior: smooth;
+}
+
