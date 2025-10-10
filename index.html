@@ -78,19 +78,19 @@
   
 
     
-                <!--- ========= PRODUCT PLACEMENT ========== --->
-
-    <!-- PRODUCT 1: Coffee Maker -->
-    <div class="product-box" id="first-product"> <!-- To link ProductButton from NAV to scroll to this 1st Product -->
-      <div class="featured-item" onclick="openSwiperModal('modal-coffee')">
-        <img src="1CoffeeMaker1main.jpg" alt="Coffee Maker">
-        <h4>Coffee Maker</h4>
-        <p>N$1,250.00</p>
-        <p class="item-description">Brew fresh coffee quickly and conveniently with this stylish and efficient machine</p>
-        <p class="tap-text"><i>Tap to view more images</i></p>
-
-      </div>
-    </div>
+          <!-- PRODUCT 1: Bedding Set -->
+<div class="product-box" id="first-product">
+  <div class="featured-item" onclick="openSwiperModal('modal-bedding')">
+    <img src="Beddings3.png" alt="Bedding Set">
+    <h4>Bedding Set</h4>
+    <p class="contact-price">
+      <a href="https://wa.me/264XXXXXXXXX" target="_blank">
+        Get your price instantly — message us now!
+      </a>
+    </p>
+    <p class="tap-text"><i>Tap to view details</i></p>
+  </div>
+</div>
     
     
     
@@ -153,16 +153,15 @@
 
 
 <!-- PRODUCT 1 MODAL -->
-<div class="swiper-modal" id="modal-coffee">
-  <div class="swiper-modal-content">
-    <div class="swiper-close-button" onclick="closeSwiperModal()">✕</div>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="1CoffeeMaker1main.jpg"></div>
-        <div class="swiper-slide"><img src="CoffeeMaker2.jpg"></div>
-        <div class="swiper-slide"><img src="CoffeeMaker3.jpg"></div>
-      </div>
-      <div class="swiper-pagination"></div>
+<div id="modal-bedding" class="modal">
+  <span class="close" onclick="closeSwiperModal('modal-bedding')">&times;</span>
+  <div class="modal-content">
+    <img src="Beddings3.png" alt="Bedding Set" class="modal-image">
+    <div class="modal-description">
+      <p>Crafted from 100% long-staple cotton for exceptional softness and durability.</p>
+      <p>Available in sateen or percale weaves with a premium 300–600 thread count.</p>
+      <p>The comforter features goose down or hypoallergenic microfiber fill for balanced warmth and loft.</p>
+      <p>Designed in King and Super King sizes for the ultimate luxury sleep experience.</p>
     </div>
   </div>
 </div>
