@@ -198,12 +198,87 @@ main, .featured-items, .banner {
   border-radius: 4px;
 }
 
-/* Colour for Product Title and Price */
-.featured-item h4,
-.featured-item p:first-of-type {
+
+
+/* Color of =Product Title */
+.featured-item h4 {
   color: #3a8bcd; /* themed blue */
   font-weight: 600;
 }
+
+
+
+/* Color for =Get your price= */
+
+.featured-item p:first-of-type {
+  color: orange;
+  text-shadow: 1px 1px 2px black;
+  font-weight: 800;
+}
+
+
+
+
+
+.contact-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #3a8bcd; /* base blue */
+  color: #fff;               /* white text */
+  font-weight: 600;
+  border-radius: 50px;       /* pill shape */
+  text-decoration: none;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.contact-btn:hover {
+  background-color: #2a6b9c; /* dark blue on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.contact-btn:active {
+  transform: scale(0.97);    /* subtle tap feedback */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.whatsapp-link {
+  color: #3a8bcd;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.whatsapp-cta {
+  display: inline-block;
+  background-color: #4285F4;
+  color: white;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-cta:hover {
+  background-color: #3367D6;
+}
+
+
+
+
+
+
 
 
 
@@ -380,4 +455,3 @@ main, .featured-items, .banner {
 html {
   scroll-behavior: smooth;
 }   
-
