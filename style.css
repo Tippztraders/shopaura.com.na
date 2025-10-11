@@ -321,7 +321,7 @@ main, .featured-items, .banner {
     outline-offset: -10px;
     border-radius: 12px;
     padding-top: 20px;
-    margin-top: -70px;
+    margin-top: -5px; /* -70px */
 }
 
 .footer .footer-menu ul {
