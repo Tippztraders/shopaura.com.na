@@ -243,10 +243,10 @@ main, .featured-items, .banner {
 
 
 
-
-
-
-
+/* Format for Product Description */
+.item-description {
+  text-align: justify;
+}
 
 
 
