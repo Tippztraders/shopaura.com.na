@@ -66,20 +66,25 @@ main, .featured-items, .banner {
     opacity: 1;
 }
 
-.header-container {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.logo {
+    height: 100%;            /* match the full header height */
+    width: auto;             /* maintain aspect ratio */
+    object-fit: contain;     /* ensure full image shows */
 }
 
-.logo {
-    height: 40px;
+.header-container {
+    position: absolute;       /* sit on top of the slideshow */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;             /* match slideshow height */
+    display: flex;
+    justify-content: flex-start; /* logo on the left */
+    align-items: center;         /* vertically center logo */
+    padding: 0 40px;             /* space from the edge */
+    z-index: 2;
 }
+
 
 /* === Banner === */
 .banner {
