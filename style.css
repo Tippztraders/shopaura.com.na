@@ -201,9 +201,10 @@ main, .featured-items, .banner {
 
 .featured-item img {
   width: 100%;
-   height: auto;  /* 150px */
+  height: 220px; /* or adjust between 200–250px if needed */
   object-fit: cover;
-  border-radius: 4px;
+  display: block;
+  border-radius: 10px;
 }
 
 
@@ -415,9 +416,7 @@ main, .featured-items, .banner {
   height: auto;
   object-fit: contain;
   display: block;
-  margin: 0 auto;
 }
-
 
 
 
