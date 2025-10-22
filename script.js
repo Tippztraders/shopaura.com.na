@@ -1,7 +1,7 @@
 let activeModal = null;
 let swipers = {};
 
-// Open Modal
+// === Open Modal ===
 function openSwiperModal(modalId) {
   const modal = document.getElementById(modalId);
   if (!modal) return;
@@ -22,10 +22,20 @@ function openSwiperModal(modalId) {
       keyboard: { enabled: true },
       grabCursor: true,
     });
+
+    // 🔧 FIX: refresh Swiper after modal becomes visible
+    setTimeout(() => {
+      swipers[modalId].update();
+    }, 100);
+  } else {
+    // If already initialized, refresh when reopening
+    setTimeout(() => {
+      swipers[modalId].update();
+    }, 100);
   }
 }
 
-// Close Modal
+// === Close Modal ===
 function closeSwiperModal() {
   if (activeModal) {
     activeModal.style.display = "none";
@@ -33,29 +43,26 @@ function closeSwiperModal() {
   }
 }
 
-// Click outside modal content closes it
+// === Click outside modal content closes it ===
 document.querySelectorAll('.swiper-modal').forEach(modal => {
   modal.addEventListener('click', e => {
     if (e.target === modal) closeSwiperModal();
   });
 });
 
-// Escape key closes modal
+// === Escape key closes modal ===
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeSwiperModal();
 });
 
-
-
-
-
-// Banner slideshow auto-change
+// === Banner slideshow auto-change ===
 const slides = document.querySelectorAll('.slideshow .slide');
 let currentSlide = 0;
 
 setInterval(() => {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add('active');
-}, 3000); // 3000ms = 3 seconds
-
+  if (slides.length > 0) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+}, 3000); // 3 seconds per slide
