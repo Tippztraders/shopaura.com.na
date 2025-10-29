@@ -78,7 +78,7 @@
   
 
     
-         <!-- PRODUCT 1: Bedding Set -->
+        <!-- PRODUCT 1: Bedding Set -->
 <div class="product-box">
   <div class="featured-item" onclick="openSwiperModal('modal-Bedding')">
     <img src="Beddings1.png" alt="Product 1">
@@ -99,11 +99,11 @@
     
 
   <!-- PRODUCT 2: Electrical Oven -->
-<div class="product-box">
-  <div class="featured-item" onclick="openSwiperModal('modal-Oven')">
-    <img src="ElectricOven1.png" alt="Electrical Oven">
-    <h4>Electrical Oven</h4>
-    <p>Get your price instantly</p>
+ <div class="product-box" id="oven-product-box">
+  <div class="featured-item" onclick="openSwiperModal('modal-oven')">
+    <img src="Electric-Oven1.png" alt="Electric Oven">
+    <h4>Electric Oven</h4>
+    <p>Get Your Price Instantly</p>
     <p>
       <a href="https://wa.me/XXXXXXXXXXX" target="_blank" class="contact-btn">
         Contact Us Now!
@@ -113,11 +113,9 @@
   </div>
 </div>
 
-
     
-   
     
-
+    
 <!-- PRODUCT 3: Bedding 3 -->
 <div class="product-box">
   <div class="featured-item" onclick="openSwiperModal('modal-bedding3')">
@@ -199,21 +197,19 @@
   
   
 
-<!-- PRODUCT 2 MODAL -->
-<div class="swiper-modal" id="modal-Oven">
-  <div class="swiper-modal-content">
-    <div class="swiper-close-button" onclick="closeSwiperModal()">✕</div>
 
-    <!-- Swiper Images -->
-    <div class="swiper-container">
+<!-- PRODUCT 2 MODAL -->
+<!-- PRODUCT 2 MODAL -->
+<div id="modal-oven" class="swiper-modal">
+  <div class="swiper-modal-content">
+    <span class="swiper-close-button">&times;</span>
+    <div class="swiper-container mySwiper-oven">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="ElectricOven1.png" alt="Electrical Oven"></div>
-        <div class="swiper-slide"><img src="Specs2.png" alt="Electrical Oven Specs"></div>
+        <div class="swiper-slide"><img src="Electric-Oven1.png" alt="Electric Oven"></div>
+        <div class="swiper-slide"><img src="Specs2.png" alt="Electric Oven Specs"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
-
-    <!-- Product Info BELOW Swiper -->
     <div class="swiper-product-info">
       <p>▹ Cook, grill, and toast perfectly with this efficient 30L electric oven.</p>
       <p>▹ Powerful 30L electric oven with dual hotplates for complete kitchen convenience.</p>
@@ -221,8 +217,6 @@
     </div>
   </div>
 </div>
-
-
   
   
   <!-- PRODUCT 3 MODAL -->
