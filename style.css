@@ -159,263 +159,267 @@ main, .featured-items, .banner {
 
 /* === Featured Section === */
 .featured-items {
-  padding: 30px 15px;
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 100px; /* space above footer */
+    padding: 30px 15px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 100px; /* space above footer */
 }
 
 .featured-items h1 {
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-  color: #3a8bcd;
-  text-decoration: underline;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: #3a8bcd;
+    text-decoration: underline;
 }
 
 /* === Product Grid === */
 .featured-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 /* === Product Card === */
 .product-box {
-  flex: 1 1 calc(25% - 20px); /* 4 per row on desktop */
-  max-width: 220px;
-  text-align: center;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 10px;
-  box-sizing: border-box;
-  cursor: pointer;
-  background: #fff;
-  transition: transform 0.2s;
+    flex: 1 1 calc(25% - 20px); /* 4 per row on desktop */
+    max-width: 220px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: #fff;
+    transition: transform 0.2s;
 }
 
 .product-box:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .featured-item img {
-  width: 100%;
-   height: auto;  /* 150px */
-  object-fit: cover;
-  border-radius: 4px;
+    width: 100%;
+    height: auto; /* 150px */
+    object-fit: cover;
+    border-radius: 4px;
 }
-
-
 
 /* Color of =Product Title */
 .featured-item h4 {
-  color: #3a8bcd; /* themed blue */
-  font-weight: 600;
+    color: #3a8bcd; /* themed blue */
+    font-weight: 600;
+    margin: 10px 0;
 }
-
-
 
 /* Color for =Get your price= */
-
-.featured-item p:first-of-type {
-  color: orange;
-  text-shadow: 1px 1px 2px black;
-  font-weight: 800;
+.featured-item p:last-of-type { /* Changed to last-of-type for better targeting */
+    color: orange;
+    text-shadow: 1px 1px 2px black;
+    font-weight: 800;
+    margin: 10px 0;
 }
 
-
-
-
-
 .contact-btn {
-  display: inline-block;
-  padding: 10px 24px;
-  background-color: #3a8bcd; /* base blue */
-  color: #fff;               /* white text */
-  font-weight: 600;
-  border-radius: 50px;       /* pill shape */
-  text-decoration: none;
-  transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #3a8bcd; /* base blue */
+    color: #fff; /* white text */
+    font-weight: 600;
+    border-radius: 50px; /* pill shape */
+    text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    margin-top: 10px;
 }
 
 .contact-btn:hover {
-  background-color: #2a6b9c; /* dark blue on hover */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #2a6b9c; /* dark blue on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .contact-btn:active {
-  transform: scale(0.97);    /* subtle tap feedback */
+    transform: scale(0.97); /* subtle tap feedback */
 }
-
-
 
 /* Format for Product Description */
 .item-description {
-  text-align: justify;
+    text-align: justify;
+    font-size: 0.9em;
+    color: #555;
+    margin: 10px 0;
 }
-
-
-
 
 
 .whatsapp-link {
-  color: #3a8bcd;
-  font-weight: 600;
-  text-decoration: none;
+    color: #3a8bcd;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .whatsapp-cta {
-  display: inline-block;
-  background-color: #4285F4;
-  color: white;
-  font-weight: 500;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-family: 'Roboto', sans-serif;
-  text-decoration: none;
-  transition: background-color 0.3s;
+    display: inline-flex; /* Use inline-flex to align icon and text */
+    align-items: center;
+    gap: 5px;
+    background-color: #25D366; /* WhatsApp Green */
+    color: white;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 50px; /* Pill shape for CTA */
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 .whatsapp-cta:hover {
-  background-color: #3367D6;
+    background-color: #128C7E;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* === Responsive Breakpoints === */
 
 /* Tablet: 2 per row */
 @media (max-width: 991px) and (min-width: 601px) {
-  .product-box {
-    flex: 1 1 calc(45% - 20px);
-    max-width: 220px;
-  }
+    .product-box {
+        flex: 1 1 calc(45% - 20px);
+        max-width: 300px;
+    }
 }
 
 /* Small mobile: 1 per row */
 @media (max-width: 600px) {
-  .product-box {
-    flex: 1 1 100%;
-    max-width: 300px;
-  }
+    .product-box {
+        flex: 1 1 100%;
+        max-width: 90%; /* Center better on small screens */
+    }
 }
-
-
 
 
 /* === Swiper Modal === */
 .swiper-modal {
-  display: none; /* hidden by default */
-  position: fixed;
-  z-index: 1000;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.85);
-  align-items: center;
-  justify-content: center;
+    display: none; /* hidden by default, JS toggles to 'flex' */
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto; /* allows scrolling if modal content is too tall */
+    overflow-y: auto;
 }
 
-.swiper-container {
-  flex: 0 0 auto;      /* don’t stretch to fill modal */
-  width: 100%;
-  height: auto;
-  max-height: 70vh;    /* ensures images never explode */
+.swiper-modal.active {
+    display: flex;
 }
 
-
-.swiper-close-button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-  background: #f44336;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  z-index: 1010;
-}
-.swiper-close-button:hover {
-  background: #d32f2f;
-}
-
-.swiper-container {
-  flex: 1;
-  width: 100%;
-}
-.swiper-container img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  max-height: 70vh;
-}
-
-
-.swiper-pagination {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-}
-
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: grey;
-  opacity: 0.6;
-  border-radius: 50%;
-}
-.swiper-pagination-bullet-active {
-  background: #3a8bcd;
-  opacity: 1;
-}
-
-
-/* Product info styling below swiper */
-.swiper-product-info {
-  background: #fff;
-  color: #333;
-  padding: 15px 20px;
-  text-align: left;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.swiper-product-info p {
-  margin: 5px 0;
-}
-
-/* Make modal content stack correctly */
 .swiper-modal-content {
-  display: flex;
-  flex-direction: column;
-  height: auto;        /* expand naturally to fit text */
-  max-height: none;    /* optional: no artificial limit */
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    /* max-height: 95vh;  <-- REMOVE OR COMMENT THIS OUT if it exists */
+    max-height: none; /* <-- USE 'none' to let it take natural height */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Swiper Carousel */
+.mySwiper {
+    width: 100%;
+    height: auto;
+    max-width: 800px; /* Control max width of the gallery */
+    max-height: 70vh;
+    position: relative; /* Essential for positioning controls */
+    background: #333; /* Dark background for the image section */
 }
 
 .swiper-slide img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    max-height: 70vh; /* Ensures images never explode */
 }
+
+.swiper-close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    background: #f44336;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1010;
+    line-height: 1; /* Fix vertical alignment */
+}
+.swiper-close-button:hover {
+    background: #d32f2f;
+}
+
+/* Swiper navigation arrows (necessary styles for visibility) */
+.swiper-button-next, .swiper-button-prev {
+    color: #fff !important; /* Make arrows white for visibility */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Product info styling below swiper */
+.swiper-product-info {
+    background: #fff;
+    color: #333;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.swiper-product-info p {
+    margin: 5px 0;
+}
+
+.swiper-product-info h4 {
+    color: #3a8bcd;
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+/* Swiper Pagination Dots (using your styles) */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: grey;
+    opacity: 0.6;
+    border-radius: 50%;
+}
+.swiper-pagination-bullet-active {
+    background: #3a8bcd;
+    opacity: 1;
+}
+
+/* Mobile adjustments for the modal content */
+@media (max-width: 768px) {
+    .swiper-modal-content {
+        max-width: 95%;
+    }
+    .swiper-close-button {
+        top: 5px;
+        right: 10px;
+        font-size: 18px;
+        padding: 4px 8px;
+    }
+}
+
+
+
+
+
+
+
 
 
 
