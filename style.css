@@ -259,7 +259,7 @@ body, #top, .page {
     box-shadow: 0 3px 6px rgba(0,0,0,0.15);
     margin-top: 10px;
     /* 🔑 The Fix: Set line-height to 1 to ensure vertical centering */
-    line-height: 1; 
+    line-height: 1.4; 
 }
 
 .contact-btn:hover {
