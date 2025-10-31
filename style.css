@@ -258,6 +258,7 @@ body, #top, .page {
   transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
   box-shadow: 0 3px 6px rgba(0,0,0,0.15);
   margin-top: 10px;
+  line-height: 1.4; /* or try 1.1 if font looks tight */
 }
 
 .contact-btn:hover {
