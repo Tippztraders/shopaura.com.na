@@ -52,10 +52,11 @@ header, main, section, footer, .wrapper, .container {
   display: block;
 }
 
-*:last-child {
+body > *:last-child {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
+
 
 *[style*="bottom:"] {
   bottom: auto !important;
