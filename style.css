@@ -248,27 +248,29 @@ body, #top, .page {
 }
 
 .contact-btn {
-  display: inline-block;
-  padding: 10px 24px;
-  background-color: #3a8bcd;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-  margin-top: 10px;
-  line-height: 1.4; /* or try 1.1 if font looks tight */
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #3a8bcd;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    margin-top: 10px;
+    /* 🔑 The Fix: Set line-height to 1 to ensure vertical centering */
+    line-height: 1; 
 }
 
 .contact-btn:hover {
-  background-color: #2a6b9c;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #2a6b9c;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .contact-btn:active {
-  transform: scale(0.97);
+    transform: scale(0.97);
 }
+
 
 .item-description {
   text-align: justify;
