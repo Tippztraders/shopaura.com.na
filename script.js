@@ -1,14 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  // === your existing modal JS here ===
   const modals = document.querySelectorAll('.swiper-modal');
   const openButtons = document.querySelectorAll('.featured-item');
   let activeModal = null;
   let swipers = {};
 
-  // === Open modal function ===
+  // Open modal
   openButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const modalId = btn.getAttribute('onclick')
-        ?.match(/'([^']+)'/)?.[1]; // grabs the id from onclick('modal-name')
+      const modalId = btn.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
       if (!modalId) return;
       const modal = document.getElementById(modalId);
       if (!modal) return;
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = 'hidden';
       activeModal = modal;
 
-      // Init Swiper only once per modal
       if (!swipers[modalId]) {
         swipers[modalId] = new Swiper(`#${modalId} .swiper-container`, {
           loop: true,
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // === Close modal ===
+  // Close modal
   document.querySelectorAll('.swiper-close-button').forEach(btn => {
     btn.addEventListener('click', () => {
       if (activeModal) {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close on backdrop click
+  // Backdrop + ESC close
   modals.forEach(modal => {
     modal.addEventListener('click', e => {
       if (e.target === modal) {
@@ -57,8 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // Close on ESC key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && activeModal) {
       activeModal.classList.remove('active');
@@ -66,4 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
       activeModal = null;
     }
   });
+
+  // === Banner slideshow auto-change ===
+  const slides = document.querySelectorAll('.slideshow .slide');
+  let currentSlide = 0;
+
+  if (slides.length > 0) {
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 3000);
+  }
+
 });
