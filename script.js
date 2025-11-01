@@ -78,3 +78,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+
+  // === Mousewheel navigation for slideshow ===
+  if (slides.length > 0) {
+    document.querySelector('.slideshow').addEventListener('wheel', (e) => {
+      e.preventDefault();
+      slides[currentSlide].classList.remove('active');
+
+      if (e.deltaY > 0) {
+        // scroll down → next
+        currentSlide = (currentSlide + 1) % slides.length;
+      } else {
+        // scroll up → previous
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      }
+
+      slides[currentSlide].classList.add('active');
+    }, { passive: false });
+  }
