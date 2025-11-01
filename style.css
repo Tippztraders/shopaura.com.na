@@ -444,6 +444,43 @@ body, #top, .page {
   }
 }
 
+
+
+
+/*== BANNERS BEFORE FOOTER ==*/
+.banner {
+  position: relative;
+  width: 100%;
+  height: 343px; /* same as header */
+  overflow: hidden;
+}
+
+.banner .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.banner .slide.active {
+  opacity: 1;
+}
+
+/*== BANNERS BEFORE FOOTER ==*/
+
+
+
+
+
+
+
+
+
+
+
+
 .footer {
   background-color: #3a8bcd;
   color: #fff;
