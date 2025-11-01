@@ -450,9 +450,10 @@ body, #top, .page {
 /*== BANNERS BEFORE FOOTER ==*/
 .banner {
   position: relative;
-  width: 100%;
-  height: 343px; /* same as header */
-  overflow: hidden;
+  max-width: 1250px; 
+  height: 326px;     
+  margin: 0 auto;     
+  overflow: hidden; 
 }
 
 .banner .slide {
@@ -462,7 +463,10 @@ body, #top, .page {
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  object-position: center;
 }
+  
+  
 
 .banner .slide.active {
   opacity: 1;
