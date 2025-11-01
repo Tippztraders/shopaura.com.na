@@ -126,3 +126,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 }); // end DOMContentLoaded
+
+
+// === BANNERS BEFORE FOOTER ===
+const bannerSlides = document.querySelectorAll('.banner .slide');
+let currentBanner = 0;
+
+setInterval(() => {
+  bannerSlides[currentBanner].classList.remove('active');
+  currentBanner = (currentBanner + 1) % bannerSlides.length;
+  bannerSlides[currentBanner].classList.add('active');
+}, 4000); // change every 4 seconds
+
+
+// === End of BANNERS BEFORE FOOTER===
+
+
