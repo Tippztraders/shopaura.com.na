@@ -449,27 +449,25 @@ body, #top, .page {
 
 /*== BANNERS BEFORE FOOTER ==*/
 .banner {
+  width: 100%;
+  height: 326px;      /* desktop height */
+  overflow: hidden;
   position: relative;
-  max-width: 1250px; 
-  height: 326px;     
-  margin: 0 auto;     
-  overflow: hidden; 
 }
 
-.banner .slide {
-  position: absolute;
+.banner-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  object-position: center;
+  object-fit: cover;       /* fills container, crops edges if needed */
+  object-position: center; /* keeps center visible */
+  display: block;
 }
-  
-  
 
-.banner .slide.active {
-  opacity: 1;
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .banner {
+    height: 200px;  /* shorter for mobile */
+  }
 }
 
 /*== BANNERS BEFORE FOOTER ==*/
