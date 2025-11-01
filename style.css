@@ -449,26 +449,30 @@ body, #top, .page {
 
 /*== BANNERS BEFORE FOOTER ==*/
 .banner {
-  width: 100%;
-  height: 326px;      /* desktop height */
-  overflow: hidden;
   position: relative;
+  width: 100%;
+  max-width: 1250px; /* or whatever width you want */
+  height: 350px;     /* fixed height for banner */
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.banner-image {
+.banner .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* fills container, crops edges if needed */
-  object-position: center; /* keeps center visible */
-  display: block;
+  object-fit: cover; /* ensures full cover without stretching */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .banner {
-    height: 200px;  /* shorter for mobile */
-  }
+.banner .slide.active {
+  opacity: 1;
+  z-index: 1;
 }
+
 
 /*== BANNERS BEFORE FOOTER ==*/
 
