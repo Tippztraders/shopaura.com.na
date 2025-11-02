@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // === your existing modal JS here ===
+  // === Modal & Swiper setup ===
   const modals = document.querySelectorAll('.swiper-modal');
   const openButtons = document.querySelectorAll('.featured-item');
   let activeModal = null;
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = 'hidden';
       activeModal = modal;
 
+      // Initialize Swiper inside modal if not already
       if (!swipers[modalId]) {
         swipers[modalId] = new Swiper(`#${modalId} .swiper-container`, {
           loop: true,
@@ -29,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
             nextEl: `#${modalId} .swiper-button-next`,
             prevEl: `#${modalId} .swiper-button-prev`,
           },
+          mousewheel: {
+            forceToAxis: true, // vertical only
+            invert: false
+          },
         });
       } else {
         swipers[modalId].update();
@@ -36,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close modal
+  // Close modal buttons
   document.querySelectorAll('.swiper-close-button').forEach(btn => {
     btn.addEventListener('click', () => {
       if (activeModal) {
@@ -47,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Backdrop + ESC close
+  // Click outside modal (backdrop)
   modals.forEach(modal => {
     modal.addEventListener('click', e => {
       if (e.target === modal) {
@@ -57,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // ESC key to close modal
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && activeModal) {
       activeModal.classList.remove('active');
@@ -65,67 +72,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // === Banner slideshow auto-change ===
+  // === Header slideshow auto-rotation only ===
   const slides = document.querySelectorAll('.slideshow .slide');
   let currentSlide = 0;
-  let autoSlideInterval = null;
 
   if (slides.length > 0) {
-    autoSlideInterval = setInterval(() => {
+    setInterval(() => {
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
     }, 3000);
   }
 
-  // === Mousewheel navigation for slideshow (throttled) ===
-  const slideshowEl = document.querySelector('.slideshow');
-  if (slideshowEl && slides.length > 0) {
-    let lastWheel = 0;
-    const wheelDelay = 300; // ms between wheel-advances
+});
 
-    slideshowEl.addEventListener('wheel', (e) => {
-      // only handle vertical wheel gestures
-      if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
 
-      const now = Date.now();
-      if (now - lastWheel < wheelDelay) {
-        e.preventDefault();
-        return; // throttle: ignore rapid wheel events
-      }
-      lastWheel = now;
 
-      e.preventDefault();
-
-      // pause auto-rotation briefly when user manually navigates
-      if (autoSlideInterval) {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = null;
-        // restart auto-rotation after 5s of inactivity
-        setTimeout(() => {
-          if (!autoSlideInterval) {
-            autoSlideInterval = setInterval(() => {
-              slides[currentSlide].classList.remove('active');
-              currentSlide = (currentSlide + 1) % slides.length;
-              slides[currentSlide].classList.add('active');
-            }, 3000);
-          }
-        }, 5000);
-      }
-
-      slides[currentSlide].classList.remove('active');
-      if (e.deltaY > 0) {
-        // scroll down → next
-        currentSlide = (currentSlide + 1) % slides.length;
-      } else {
-        // scroll up → previous
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      }
-      slides[currentSlide].classList.add('active');
-    }, { passive: false });
-  }
-
-}); // end DOMContentLoaded
 
 
 // === BANNERS BEFORE FOOTER ===
@@ -140,5 +102,3 @@ setInterval(() => {
 
 
 // === End of BANNERS BEFORE FOOTER===
-
-
