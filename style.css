@@ -448,11 +448,14 @@ body, #top, .page {
 
 
 /*== BANNERS BEFORE FOOTER ==*/
+
 .banner {
   position: relative;
   width: 100%;
-  max-width: 1250px; /* or whatever width you want */
-  height: 350px;     /* fixed height for banner */
+  max-width: 1250px;
+  
+  height: 30vh;    
+  min-height: 250px; 
   margin: 0 auto;
   overflow: hidden;
 }
@@ -463,7 +466,8 @@ body, #top, .page {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ensures full cover without stretching */
+  /* This is correct: it fills the container while maintaining aspect ratio */
+  object-fit: cover; 
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
@@ -473,9 +477,13 @@ body, #top, .page {
   z-index: 1;
 }
 
-
-/*== BANNERS BEFORE FOOTER ==*/
-
+@media (max-width: 768px) {
+  .banner {
+    height: 20vh;
+    min-height: 150px; 
+  }
+}
+/*== End of BANNERS BEFORE FOOTER ==*/
 
 
 
