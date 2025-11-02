@@ -586,19 +586,6 @@ body, #top, .page {
     color: #222;
 }
 
-.footer-logo {
-    display: block;
-    margin: 0 auto 15px auto;
-    height: 200px;
-}
-
-
-footer .footer-logo {
-    flex: 1 1 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 .whatsapp-btn {
@@ -616,6 +603,18 @@ footer .footer-logo {
 .whatsapp-btn:hover {
     background-color: #1ebe5d;
 }
+
+.footer-logo-wrap {
+  text-align: center;      /* Centers the content horizontally */
+  margin-top: 15px;        /* Space above the logo */
+}
+
+.footer-logo {
+  width: 200px;            /* Set fixed width */
+  height: auto;            /* Maintain aspect ratio */
+  display: inline-block;   /* Ensures proper centering */
+}
+
 /* === End of Footer Top === */
 
 
