@@ -1,46 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop-Aura</title>
-    <link rel="stylesheet" href="style.css">
-  
-  
-  
-   <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive E-commerce Header</title>
 
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-blue': '#3a8bcd',
+            'brand-dark': '#2a6b9c',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  
-    <!-- Font Awesome for arrows -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Optional Custom Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-50 min-h-screen">
 
-    <!-- Pre-header section -->
-    <div class="pre-header">
-        <p>"Quality You Need. Variety You’ll Love"</p>
+  <!-- Primary Header -->
+  <header class="shadow-lg bg-white sticky top-0 z-50">
+    <!-- Top Info Bar -->
+    <div class="hidden sm:block bg-brand-dark text-white text-xs py-1.5 text-center font-medium">
+      FREE SHIPPING on all orders over $100 | Call us at (555) 123-4567
     </div>
 
-    <!-- Header with slideshow behind logo/nav -->
-    <a id="top"></a>
-    <header class="header">
-        <div class="slideshow">
-            <img src="slide4.png" class="slide active" alt="Slide 4">
-            <img src="slide5.png" class="slide" alt="Slide 5">
-            <img src="slide6.png" class="slide" alt="Slide 6">
-        </div>
-      </header>
+    <!-- Header Row -->
+    <div class="flex justify-between items-center h-16 px-4 md:px-8 max-w-7xl mx-auto">
+      <!-- Logo -->
+      <a href="#" class="flex items-center text-xl font-bold text-brand-blue tracking-tight hover:text-brand-dark transition duration-150">
+        Home & Kitchen Hub
+      </a>
 
-    <!-- Banner and navigation -->
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 font-medium text-gray-700">
+        <a href="#" class="hover:text-brand-blue transition">Kitchen</a>
+        <a href="#" class="hover:text-brand-blue transition">Appliances</a>
+        <a href="#" class="hover:text-brand-blue transition">Household</a>
+        <a href="#" class="hover:text-brand-blue transition">Sale</a>
+      </nav>
+
+      <!-- Icons -->
+      <div class="flex items-center space-x-3 sm:space-x-4">
+        <!-- Account -->
+        <button class="p-2 text-gray-600 hover:text-brand-blue rounded-full transition duration-150 relative" aria-label="Account">
+          <i data-lucide="user" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Cart -->
+        <button class="p-2 text-gray-600 hover:text-brand-blue rounded-full transition duration-150 relative" aria-label="Shopping Cart">
+          <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+          <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-0.5 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">3</span>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-brand-blue rounded-full transition duration-150" aria-label="Toggle Menu">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="px-4 py-2 border-t border-gray-100 md:border-none md:p-0 md:max-w-7xl mx-auto">
+      <div class="relative w-full">
+        <input type="search" placeholder="Search for mixers, fans, carpets, and more..."
+          class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-brand-blue focus:border-brand-blue transition duration-150"
+          aria-label="Search all products">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+          <i data-lucide="search" class="w-5 h-5"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl transform -translate-x-full transition-transform duration-300 z-50 md:hidden">
+    <div class="p-4 border-b flex justify-between items-center h-16">
+      <span class="text-lg font-semibold text-gray-800">Menu</span>
+      <button id="close-menu" class="p-2 text-gray-600 hover:text-brand-blue rounded-full" aria-label="Close Menu">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col p-4 space-y-2">
+      <a href="#" class="px-3 py-2 text-lg font-medium text-gray-700 rounded-lg hover:bg-brand-blue hover:text-white transition">Kitchen Equipment</a>
+      <a href="#" class="px-3 py-2 text-lg font-medium text-gray-700 rounded-lg hover:bg-brand-blue hover:text-white transition">Appliances</a>
+      <a href="#" class="px-3 py-2 text-lg font-medium text-gray-700 rounded-lg hover:bg-brand-blue hover:text-white transition">Household Items</a>
+      <a href="#" class="px-3 py-2 text-lg font-medium text-red-600 rounded-lg hover:bg-red-50 transition">Today's Deals</a>
+    </nav>
+  </div>
+
+  <!-- Backdrop -->
+  <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+  <!-- JS for Lucide & Menu -->
+  <script>
+    lucide.createIcons();
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const backdrop = document.getElementById('backdrop');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('-translate-x-full');
+      backdrop.style.display = 'block';
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+      backdrop.style.display = 'none';
+    });
+
+    backdrop.addEventListener('click', () => {
+      mobileMenu.classList.add('-translate-x-full');
+      backdrop.style.display = 'none';
+    });
+  </script>
+   
+  <!-- == End of Header == -->
+  
+   
+
+    <!-- Banner and navigation selfie ladies-->
     <section class="banner">
-        <img src="banner2.jpg" class="banner-image" alt="Shopping Ladies selfie">
+        <img src="https://i.postimg.cc/3xbLcPxT/banner2.jpg" class="banner-image" alt="Shopping Ladies selfie">
 
         <nav class="main-nav">
             <ul class="nav-list">
@@ -62,9 +171,7 @@
   
   
   
-  
-  
-  <section class="featured-items">
+   <section class="featured-items">
   <h1 id="featured-items">Featured Items</h1>
 
 
@@ -97,7 +204,7 @@
   <!-- PRODUCT 2: Electrical Oven -->
  <div class="product-box" id="oven-product-box">
   <div class="featured-item" onclick="openSwiperModal('modal-oven')">
-    <img src="ElectricOven1.png" alt="Electric Oven">
+    <img src="https://i.postimg.cc/bJp8rTx5/Electric-Oven1.png" alt="Electric Oven">
     <h4>Electric Oven</h4>
     <p>Get Your Price Instantly</p>
     <p>
@@ -136,7 +243,7 @@
 <!-- PRODUCT 4: Carpet 5 -->
 <div class="product-box">
   <div class="featured-item" onclick="openSwiperModal('modal-carpet5')">
-    <img src="Carpet1.png" alt="Carpet 5">
+    <img src="https://i.postimg.cc/J48bG0ww/Carpet1.png" alt="Carpet 5">
     <h4>Carpet</h4>
     <p>Get Your Price Instantly</p>
     <p>
@@ -156,8 +263,9 @@
   
   
   
-  
-  
+    
+    
+   
   
           <!--- ========= MODAL ========== --->
 
@@ -200,8 +308,8 @@
     <span class="swiper-close-button">&times;</span>
     <div class="swiper-container mySwiper-oven">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="ElectricOven1.png" alt="Electric Oven"></div>
-        <div class="swiper-slide"><img src="Specs2.png" alt="Electric Oven Specs"></div>
+        <div class="swiper-slide"><img src="https://i.postimg.cc/bJp8rTx5/Electric-Oven1.png" alt="Electric Oven"></div>
+        <div class="swiper-slide"><img src="https://i.postimg.cc/zGrBcvh9/Specs2.png" alt="Electric Oven Specs"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -246,11 +354,11 @@
 
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="Carpet1.png" alt="Carpet 5"></div>
-        <div class="swiper-slide"><img src="Carpet2.png" alt="Carpet 5"></div>
-        <div class="swiper-slide"><img src="Carpet3.png" alt="Carpet 5"></div>
-        <div class="swiper-slide"><img src="Carpet4.png" alt="Carpet 5"></div>
-        <div class="swiper-slide"><img src="Carpet5.png" alt="Carpet 5"></div>
+        <div class="swiper-slide"><img src="https://i.postimg.cc/J48bG0ww/Carpet1.png" alt="Carpet 5"></div>
+        <div class="swiper-slide"><img src="https://i.postimg.cc/VLzCzhth/Carpet2.png" alt="Carpet 5"></div>
+        <div class="swiper-slide"><img src="https://i.postimg.cc/j5KsyptF/Carpet3.png" alt="Carpet 5"></div>
+        <div class="swiper-slide"><img src="https://i.postimg.cc/5yyW31Gn/Carpet4.png" alt="Carpet 5"></div>
+        <div class="swiper-slide"><img src="https://i.postimg.cc/mDd0hJDX/Carpet5.png" alt="Carpet 5"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -270,34 +378,39 @@
 
 
 
-      
 
- <!-- === BANNERS == --> 
+  
+   <!-- === BANNERS == --> 
    <section class="banner">
-  <img src="banner12.jpg" class="slide active" alt="Banner 1">
-  <img src="banner14.png" class="slide" alt="Banner 2">
+  <img src="https://i.postimg.cc/RV1g3xC0/11235302-10543.jpg" class="slide active" alt="Banner 1">
+  <img src="https://i.postimg.cc/HLr09qmX/40486493-8852975.jpg" class="slide" alt="Banner 2">
 </section>
 
     <!-- === End of BANNERS == -->   
-
-
-
-
-
-      
-
-      
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
     
   
   
+ 
   
   
-   <!-- Footer Starts Here -->
+  
+  
+  <!-- Footer Starts Here -->
  <footer class="footer" id="footer-section">
     <div class="footer-top">
         <div class="footer-slogan">
             <p></p>
-        </div>
+        </div> 
 
      
             <div class="footer-column">
@@ -326,7 +439,6 @@
 </footer>
 
 <!-- End of Footer -->
-  
   
   
   
