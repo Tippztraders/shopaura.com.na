@@ -105,22 +105,44 @@ setInterval(() => {
 
 
 // === SEARCH BAR ===
+// === SEARCH BAR ===
 document.addEventListener('DOMContentLoaded', () => {
-  const searchInput = document.querySelector('header input[type="search"]'); // your search bar
-  const products = document.querySelectorAll('.featured-item'); // your actual product elements
+    const searchInput = document.querySelector('header input[type="search"]'); 
+    const products = document.querySelectorAll('.featured-item'); 
+    // New: Get the message element
+    const noResultsMessage = document.getElementById('no-results-message');
 
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        let resultsFound = 0; // New: Initialize counter for visible products
 
-    products.forEach(item => {
-      const name = item.querySelector('h4')?.textContent.toLowerCase() || '';
-      const description = item.textContent.toLowerCase(); // includes <p> text
+        products.forEach(item => {
+            const name = item.querySelector('h4')?.textContent.toLowerCase() || '';
+            const description = item.textContent.toLowerCase(); 
 
-      // Show if the search matches the product name or any text inside
-      item.parentElement.style.display = (name.includes(query) || description.includes(query)) ? '' : 'none';
+            // Check if the item should be visible
+            const isMatch = name.includes(query) || description.includes(query);
+
+            // Item visibility is applied to the parent element (assuming your product grid uses a flex/grid container)
+            item.parentElement.style.display = isMatch ? '' : 'none';
+
+            // If a match is found, increment the counter
+            if (isMatch) {
+                resultsFound++;
+            }
+        });
+
+        // Final check: Show or hide the "No results" message
+        if (resultsFound === 0 && query.length > 0) {
+            // Show message only if no results AND the search bar isn't empty
+            noResultsMessage.style.display = 'block';
+        } else {
+            // Hide message if results were found or the search bar is empty
+            noResultsMessage.style.display = 'none';
+        }
     });
-  });
 });
+// === End of SEARCH BAR ===
 
 // === End of SEARCH BAR ===
 
