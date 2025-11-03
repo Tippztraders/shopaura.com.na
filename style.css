@@ -138,6 +138,19 @@ body, #top, .page {
   object-fit: contain;
 }
 
+
+#no-results-message {
+    /* Centering the text */
+    text-align: center; 
+    /* Style for visibility */
+    font-size: 1.2em;
+    color: #555;
+    padding: 30px 0;
+    /* Hide it by default */
+    display: none; 
+}
+
+
 .banner {
   position: relative;
   width: 100%;
