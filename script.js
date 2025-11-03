@@ -100,5 +100,27 @@ setInterval(() => {
   bannerSlides[currentBanner].classList.add('active');
 }, 4000); // change every 4 seconds
 
-
 // === End of BANNERS BEFORE FOOTER===
+
+
+
+// === SEARCH BAR ===
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector('header input[type="search"]'); // your search bar
+  const products = document.querySelectorAll('.featured-item'); // your actual product elements
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+
+    products.forEach(item => {
+      const name = item.querySelector('h4')?.textContent.toLowerCase() || '';
+      const description = item.textContent.toLowerCase(); // includes <p> text
+
+      // Show if the search matches the product name or any text inside
+      item.parentElement.style.display = (name.includes(query) || description.includes(query)) ? '' : 'none';
+    });
+  });
+});
+
+// === End of SEARCH BAR ===
+
