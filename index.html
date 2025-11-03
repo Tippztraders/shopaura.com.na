@@ -82,18 +82,37 @@
       </div>
     </div>
 
-    <!-- Search Bar -->
-    <div class="px-4 py-2 border-t border-gray-100 md:border-none md:p-0 md:max-w-7xl mx-auto">
-      <div class="relative w-full">
-        <input type="search" placeholder="Search for mixers, fans, carpets, and more..."
-          class="w-full pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-brand-blue focus:border-brand-blue transition duration-150"
-          aria-label="Search all products">
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-          <i data-lucide="search" class="w-5 h-5"></i>
-        </div>
+
+
+    
+    <!-- SEARCH BAR -->
+    <section class="featured-items">
+  <h1 id="featured-items">Featured Items</h1>
+
+  <div class="featured-grid">
+
+    <div class="product-box">
+      <div class="featured-item" onclick="openSwiperModal('modal-Bedding')">
+        <img src="Beddings1.png" alt="Product 1">
+        <h4>Bedding Set</h4>
+        <p>Get Your Price Instantly</p>
+        <p>
+          <a href="https://wa.me/+264" target="_blank" class="contact-btn">
+            Contact Us Now!
+          </a>
+        </p>
+        <p class="tap-text"><i>Tap to view more images</i></p>
       </div>
     </div>
-  </header>
+    
+    </div> <div id="no-results-message">
+    No products match your search.
+  </div>
+  </section>
+<!-- End of SEARCH BAR -->
+
+
+  
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl transform -translate-x-full transition-transform duration-300 z-50 md:hidden">
